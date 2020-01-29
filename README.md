@@ -8,13 +8,13 @@
 
 > url: "localhost:8080/api/arrays" , Verbos: POST/GET 
 
-Json 2x2
+POST: Json 2x2
 ```json
 {
   "input": [[1,2],[3,4]]
 }
 ```
-Json 3x3
+POST: Json 3x3
 ```json
 {
   "input": [[1,2,3],[4,5,6],[7,8,9]]
