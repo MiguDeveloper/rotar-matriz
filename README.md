@@ -4,7 +4,22 @@
 - Autor: Miguel Chinchay
 - IDE: IntelliJ
 - Database: H2
-- Capturas POSTMAN:
+### Capturas POSTMAN: 
+
+> url: "localhost:8080/api/arrays" , Verbos: POST/GET 
+
+Json 2x2
+```json
+{
+  "input": [[1,2],[3,4]]
+}
+```
+Json 3x3
+```json
+{
+  "input": [[1,2,3],[4,5,6],[7,8,9]]
+}
+```
 
 GET: inicio array vacio
 url: https://drive.google.com/file/d/1vqpEz6L0neTHER_TxJJSrW-ZafLx5Qxk/view?usp=sharing

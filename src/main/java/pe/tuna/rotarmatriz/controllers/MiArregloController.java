@@ -25,12 +25,8 @@ public class MiArregloController {
         Map<String, Object> response = new HashMap<>();
         MiArreglo arregloNew = null;
 
-        try{
+        try {
             List<List<Integer>> arrayNxN = arreglo.getInput();
-            /**
-             * sizeMainArray: tamanio array principal
-             * error: false= cumple NxN, true= no cumple NxN
-             */
             int sizeMainArray = arrayNxN.size();
             boolean error = false;
 
@@ -43,7 +39,6 @@ public class MiArregloController {
                 }
             }
             if (error) { // No cumple condicion NxN, encontro tamanios diferentes
-                //return new MiArreglo(0L, "Verifique los datos del arreglo");
                 response.put("mensaje", "error no cumple condicion NxN");
                 response.put("error", "Error NxN");
                 return new ResponseEntity<Map<String, Object>>(response, HttpStatus.BAD_REQUEST);
@@ -56,10 +51,10 @@ public class MiArregloController {
                     mainArray.add(contieneItems);
                 }
 
-                try{
+                try {
                     arreglo.setOutput(mainArray.toString());
                     arregloNew = miArregloService.save(arreglo);
-                }catch (DataAccessException e){
+                } catch (DataAccessException e) {
                     response.put("mensaje", "error al crear array inverso en la base de datos");
                     response.put("error", e.getMessage().concat(": ").concat(e.getMostSpecificCause().getMessage()));
                     return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -72,7 +67,7 @@ public class MiArregloController {
 
             }
 
-        }catch (Exception ex){
+        } catch (Exception ex) {
             response.put("mensaje", "Error en array en la base de datos");
             response.put("error", ex.getMessage());
             return new ResponseEntity<Map<String, Object>>(response, HttpStatus.INTERNAL_SERVER_ERROR);
