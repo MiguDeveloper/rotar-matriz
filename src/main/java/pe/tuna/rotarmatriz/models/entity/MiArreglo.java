@@ -11,18 +11,18 @@ public class MiArreglo implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String imagen;
+    private String output;
 
     @Transient
-    private List<List<Integer>> arregloEnteros;
+    private List<List<Integer>> input;
 
 
     public MiArreglo() {
     }
 
-    public MiArreglo(Long id, String imagen) {
+    public MiArreglo(Long id, String output) {
         this.id = id;
-        this.imagen = imagen;
+        this.output = output;
     }
 
     public Long getId() {
@@ -33,20 +33,20 @@ public class MiArreglo implements Serializable {
         this.id = id;
     }
 
-    public String getImagen() {
-        return imagen;
+    public String getOutput() {
+        return output;
     }
 
-    public void setImagen(String imagen) {
-        this.imagen = imagen;
+    public void setOutput(String imagen) {
+        this.output = imagen;
     }
 
-    public List<List<Integer>> getArregloEnteros() {
-        return arregloEnteros;
+    public List<List<Integer>> getInput() {
+        return input;
     }
 
-    public void setArregloEnteros(List<List<Integer>> arregloEnteros) {
-        this.arregloEnteros = arregloEnteros;
+    public void setInput(List<List<Integer>> input) {
+        this.input = input;
     }
 
 }

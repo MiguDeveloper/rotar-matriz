@@ -26,7 +26,7 @@ public class MiArregloController {
         MiArreglo arregloNew = null;
 
         try{
-            List<List<Integer>> arrayNxN = arreglo.getArregloEnteros();
+            List<List<Integer>> arrayNxN = arreglo.getInput();
             /**
              * sizeMainArray: tamanio array principal
              * error: false= cumple NxN, true= no cumple NxN
@@ -57,7 +57,7 @@ public class MiArregloController {
                 }
 
                 try{
-                    arreglo.setImagen(mainArray.toString());
+                    arreglo.setOutput(mainArray.toString());
                     arregloNew = miArregloService.save(arreglo);
                 }catch (DataAccessException e){
                     response.put("mensaje", "error al crear array inverso en la base de datos");
